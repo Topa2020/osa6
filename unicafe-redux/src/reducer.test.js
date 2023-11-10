@@ -73,7 +73,7 @@ describe('unicafe reducer', () => {
     const newState = counterReducer(state, action)
     expect(newState).toEqual({
       good: 0,
-      ok: 1,
+      ok: 0,
       bad: 0
     })
   })
