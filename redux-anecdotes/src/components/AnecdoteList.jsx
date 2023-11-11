@@ -15,12 +15,17 @@ const sortedAnecdotes = (anecdotes) => {
 
 const AnecdotesList = () => {
   const dispatch = useDispatch()
-  const anecdotes = useSelector(state => state)
+  const anecdotes = useSelector(state => state.anecdotes)
+
+  const filterInput = useSelector(state => state.filter)
+  
+  const filter = (filterInput) 
+    ? anecdotes.filter(anecdotes => anecdotes.content.toLowerCase().includes(filterInput.toLowerCase()))
+    : anecdotes
 
   return(
     <div>
-      <h2>Anecdotes</h2>
-      {sortedAnecdotes(anecdotes).map(anecdote =>
+      {sortedAnecdotes(filter).map(anecdote =>
         <Anecdote
           key={anecdote.id}
           anecdote={anecdote}
