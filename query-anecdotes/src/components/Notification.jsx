@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import { useNotifyValue } from '../NotifyContext'
 
 const Notification = () => {
